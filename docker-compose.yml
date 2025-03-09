@@ -1,0 +1,17 @@
+#version: '3.8'
+
+services:
+  etudiantgestion-service:
+    image: elhadji01/gestion-classe:latest
+    container_name: gestion-classe
+    restart: always
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

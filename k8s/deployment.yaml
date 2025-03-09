@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gestion-classe
+  namespace: preprod
+  labels:
+    app: gestion-classe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gestion-classe
+  template:
+    metadata:
+      name: gestion-classe
+      labels:
+        app: gestion-classe
+    spec:
+      containers:
+        - name: gestion-classe
+          image: elhadji01/gestion-classe
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              protocol: TCP
+      restartPolicy: Always
+      
