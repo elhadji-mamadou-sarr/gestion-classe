@@ -1,8 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grafana
+  name: grafana-deployment
   namespace: monitoring
+  labels:
+    app: grafana
 spec:
   replicas: 1
   selector:
@@ -15,6 +17,6 @@ spec:
     spec:
       containers:
         - name: grafana
-          image: grafana/grafana
+          image: grafana/grafana:latest
           ports:
-            - containerPort: 3000
+            - containerPort: 3002
