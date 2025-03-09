@@ -122,7 +122,13 @@ jobs:
           kubectl apply -f k8s/namespace.yaml
           kubectl apply -f k8s/deployment.yaml
           kubectl apply -f k8s/service.yaml
-#          kubectl apply -f k8s/prometheus-loadbalancer.yaml -n monitoring
+          kubectl apply -f k8s/prometheus-loadbalancer.yaml -n monitoring
+          kubectl apply -f k8s/prometheus-deployment.yaml
+          kubectl apply -f k8s/prometheus-config.yaml
+          kubectl apply -f k8s/grafana-deployment.yaml
+          kubectl apply -f k8s/grafana-config.yaml
+          kubectl apply -f k8s/monitoring.yaml
+
 #          if [[ "$TAG" == "master" ]]; then
 #            kubectl apply -f k8s/namespace.yaml
 #            kubectl apply -f k8s/deployment.yaml
