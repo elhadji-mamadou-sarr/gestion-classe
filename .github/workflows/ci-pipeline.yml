@@ -37,7 +37,7 @@ jobs:
 
 #      - name:  🖥 Exécuter les tests IHM
 #        run: |
-#          mvn verify -P ui-tests
+#          mvn verify -P ui-tests ve
 
 #      - name: Exécuter les tests unitaires
 #        run: mvn test
